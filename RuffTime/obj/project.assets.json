@@ -11881,6 +11881,7 @@
       "Microsoft.AspNetCore.Authentication.Cookies >= 2.1.1",
       "Microsoft.AspNetCore.Authentication.OpenIdConnect >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
+      "Microsoft.Extensions.DependencyInjection >= 2.1.1",
       "Microsoft.Extensions.Http.Polly >= 2.1.1",
       "Microsoft.NETCore.App >= 2.1.0",
       "Newtonsoft.Json >= 11.0.2"
@@ -11893,11 +11894,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sdang7621\\Desktop\\RuffTime\\RuffTime.csproj",
+      "projectUniqueName": "C:\\Users\\sdang7621\\Desktop\\RuffTime\\RuffTime\\RuffTime.csproj",
       "projectName": "RuffTime",
-      "projectPath": "C:\\Users\\sdang7621\\Desktop\\RuffTime\\RuffTime.csproj",
+      "projectPath": "C:\\Users\\sdang7621\\Desktop\\RuffTime\\RuffTime\\RuffTime.csproj",
       "packagesPath": "C:\\Users\\sdang7621\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sdang7621\\Desktop\\RuffTime\\obj\\",
+      "outputPath": "C:\\Users\\sdang7621\\Desktop\\RuffTime\\RuffTime\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11945,6 +11946,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.2, )"
+          },
+          "Microsoft.Extensions.DependencyInjection": {
+            "target": "Package",
+            "version": "[2.1.1, )"
           },
           "Microsoft.Extensions.Http.Polly": {
             "target": "Package",

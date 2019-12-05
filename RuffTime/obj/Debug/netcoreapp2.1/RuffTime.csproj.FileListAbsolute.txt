@@ -32,7 +32,6 @@ C:\Users\sdang7621\Desktop\RuffTime\RuffTime\obj\Debug\netcoreapp2.1\RuffTime.Vi
 C:\Users\sdang7621\Desktop\RuffTime\RuffTime\obj\Debug\netcoreapp2.1\RuffTime.dll
 C:\Users\sdang7621\Desktop\RuffTime\RuffTime\obj\Debug\netcoreapp2.1\RuffTime.pdb
 C:\Users\sdang7621\Desktop\RuffTime\RuffTime\obj\Debug\netcoreapp2.1\RuffTime.csproj.CopyComplete
-C:\Users\sdang7621\Desktop\RuffTime\RuffTime\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 C:\Users\sdang7621\Desktop\RuffTime\bin\Debug\netcoreapp2.1\RuffTime.deps.json
 C:\Users\sdang7621\Desktop\RuffTime\bin\Debug\netcoreapp2.1\RuffTime.runtimeconfig.json
 C:\Users\sdang7621\Desktop\RuffTime\bin\Debug\netcoreapp2.1\RuffTime.runtimeconfig.dev.json
@@ -68,3 +67,4 @@ C:\Users\sdang7621\Desktop\RuffTime\obj\Debug\netcoreapp2.1\RuffTime.dll
 C:\Users\sdang7621\Desktop\RuffTime\obj\Debug\netcoreapp2.1\RuffTime.pdb
 C:\Users\sdang7621\Desktop\RuffTime\obj\Debug\netcoreapp2.1\RuffTime.csproj.CopyComplete
 C:\Users\sdang7621\Desktop\RuffTime\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\sdang7621\Desktop\RuffTime\RuffTime\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

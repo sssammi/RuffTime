@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using RuffTime.Models;
 
@@ -11,30 +13,37 @@ namespace RuffTime.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILogger<HomeController> _logger;
+        private readonly IHttpClientFactory _httpClientFactory;
+
+        public HomeController(ILogger<HomeController> logger, IHttpClientFactory httpClientFactory)
+        {
+            _logger = logger;
+            _httpClientFactory = httpClientFactory;
+        }
         private async Task<Dog> GetDog()
         {
-            // Get an instance of HttpClient from the factpry that we registered
-            // in Startup.cs
-            //var client = _httpClientFactory.CreateClient("thedogapi");
+            var client = _httpClientFactory.CreateClient("thedogapi");
 
-            // Call the API & wait for response. 
-            // If the API call fails, call it again according to the re-try policy
-            // specified in Startup.cs
-            //var result = await client.GetAsync("/api/location/1103816/");
+            var result = await client.GetAsync("/v1/images/search?format=json&order=RANDOM");
 
-            //if (result.IsSuccessStatusCode)
-            //{
-            //    // Read all of the response and deserialise it into an instace of
-            //    // WeatherForecast class
-            //    var content = await result.Content.ReadAsStringAsync();
-            //    return JsonConvert.DeserializeObject<Dog>(content);
-            //}
+            if (result.IsSuccessStatusCode)
+            {
+                var content = await result.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<Dog>(content);
+            }
             return null;
         }
-        public IActionResult Index()
+
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var model = await GetDog();
+            return View(model);
         }
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
 
         public IActionResult About()
         {

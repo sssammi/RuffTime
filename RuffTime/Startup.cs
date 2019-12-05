@@ -14,6 +14,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using System.Net.Http;
+using Polly;
 
 namespace RuffTime
 {
@@ -93,12 +95,19 @@ namespace RuffTime
             });
 
             services.AddHttpClient();
+            //register client for the AJAX call
             services.AddHttpClient("thedogapi", c =>
             {
-                c.BaseAddress = new Uri("https://api.thedogapi.com/v1/images/");
-                c.DefaultRequestHeaders.Add("Content-Type", "application/json");
-                c.DefaultRequestHeaders.Add("x-api-key", "0cb2b381-a316-430a-b2a0-b8010829cefc");
-            });
+                c.BaseAddress = new Uri("https://api.thedogapi.com/v1");
+                c.DefaultRequestHeaders.Add("Accept", "application/json");
+                //c.DefaultRequestHeaders.Add("x-api-key", "0cb2b381-a316-430a-b2a0-b8010829cefc");
+            })
+            //retry policy
+            .AddTransientHttpErrorPolicy(builder => builder.WaitAndRetryAsync(new[] {
+                TimeSpan.FromSeconds(1),
+                TimeSpan.FromSeconds(5),
+                TimeSpan.FromSeconds(10)
+            }));
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(

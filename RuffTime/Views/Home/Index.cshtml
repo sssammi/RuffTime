@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model Dog;
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">
@@ -28,7 +29,13 @@
 <div class="row">
     <div class="col-md-3">
         <h2>Bringing you joy during Ruff Times</h2>
-        <div></div>
+        <div class="text-left">
+            <h1 class="display-4">Random Dog @Model.breeds</h1>
+            <div>
+                <img src="@Model.url" style="width:100px" />
+                <hr />
+            </div>
+        </div>
         <p></p><br />
     </div>
 </div>

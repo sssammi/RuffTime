@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sdang7621\\Desktop\\RuffTime\\RuffTime.csproj": {}
+    "C:\\Users\\sdang7621\\Desktop\\RuffTime\\RuffTime\\RuffTime.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sdang7621\\Desktop\\RuffTime\\RuffTime.csproj": {
+    "C:\\Users\\sdang7621\\Desktop\\RuffTime\\RuffTime\\RuffTime.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sdang7621\\Desktop\\RuffTime\\RuffTime.csproj",
+        "projectUniqueName": "C:\\Users\\sdang7621\\Desktop\\RuffTime\\RuffTime\\RuffTime.csproj",
         "projectName": "RuffTime",
-        "projectPath": "C:\\Users\\sdang7621\\Desktop\\RuffTime\\RuffTime.csproj",
+        "projectPath": "C:\\Users\\sdang7621\\Desktop\\RuffTime\\RuffTime\\RuffTime.csproj",
         "packagesPath": "C:\\Users\\sdang7621\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sdang7621\\Desktop\\RuffTime\\obj\\",
+        "outputPath": "C:\\Users\\sdang7621\\Desktop\\RuffTime\\RuffTime\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -59,6 +59,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.2, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[2.1.1, )"
             },
             "Microsoft.Extensions.Http.Polly": {
               "target": "Package",
