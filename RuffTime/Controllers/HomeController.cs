@@ -34,11 +34,46 @@ namespace RuffTime.Controllers
             }
             return null;
         }
+        private async Task<List<GifResult>> GetGif()
+        {
+            var client = _httpClientFactory.CreateClient("tenorapi");
+
+            var result = await client.GetAsync("/search?q=cutepuppy&key=XT36E03J2HH2");
+
+            if (result.IsSuccessStatusCode)
+            {
+                var content = await result.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<List<GifResult>>(content);
+            }
+            return null;
+        }
+        private async Task<WeatherForecast> GetWeatherForecast()
+        {
+            var client = _httpClientFactory.CreateClient("metaweather");
+
+            // Calling API for Toronto weather
+            var result = await client.GetAsync("/api/location/4118/");
+
+            if (result.IsSuccessStatusCode)
+            {
+                var content = await result.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<WeatherForecast>(content);
+            }
+            return null;
+        }
 
         public async Task<IActionResult> Index()
         {
-            var model = await GetDog();
-            return View(model);
+            var dogModel = await GetDog();
+            var weatherModel = await GetWeatherForecast();
+
+            return View(dogModel);
+        }
+        public async Task<IActionResult> Weather()
+        {
+            var weatherModel = await GetWeatherForecast();
+
+            return View(weatherModel);
         }
         public IActionResult About()
         {

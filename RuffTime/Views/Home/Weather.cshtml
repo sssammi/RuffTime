@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model WeatherForecast;
+
+<div class="row">
+    <div>
+        <h2>Here's the forecast for @Model.title</h2>
+        @foreach (var forecast in Model.consolidated_weather)
+        {
+            <div>
+                <h3>@forecast.applicable_date</h3>
+                <img src="https://www.metaweather.com/static/img/weather/@(forecast.weather_state_abbr).svg" style="width:45px" />
+                <h3>@forecast.weather_state_name</h3>
+                <div>Low: @forecast.min_temp Cº</div>
+                <div>High: @forecast.max_temp Cº</div>
+                <div>Confidence: @forecast.predictability %</div>
+                <hr style="border: 2px solid grey; border-radius: 5px;" />
+            </div>
+        }
+    </div>
+</div>

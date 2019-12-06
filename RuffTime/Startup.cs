@@ -100,9 +100,19 @@ namespace RuffTime
             {
                 c.BaseAddress = new Uri("https://api.thedogapi.com/v1");
                 c.DefaultRequestHeaders.Add("Accept", "application/json");
-                //c.DefaultRequestHeaders.Add("x-api-key", "0cb2b381-a316-430a-b2a0-b8010829cefc");
             })
             //retry policy
+            .AddTransientHttpErrorPolicy(builder => builder.WaitAndRetryAsync(new[] {
+                TimeSpan.FromSeconds(1),
+                TimeSpan.FromSeconds(5),
+                TimeSpan.FromSeconds(10)
+            }));
+
+            //MetaWeather API client
+            services.AddHttpClient("metaweather", client => {
+                client.BaseAddress = new Uri("https://www.metaweather.com/");
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+            })
             .AddTransientHttpErrorPolicy(builder => builder.WaitAndRetryAsync(new[] {
                 TimeSpan.FromSeconds(1),
                 TimeSpan.FromSeconds(5),

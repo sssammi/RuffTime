@@ -105,3 +105,4 @@ C:\Users\Sammi\Desktop\RuffTime\RuffTime\obj\Debug\netcoreapp2.1\RuffTime.Views.
 C:\Users\Sammi\Desktop\RuffTime\RuffTime\obj\Debug\netcoreapp2.1\RuffTime.dll
 C:\Users\Sammi\Desktop\RuffTime\RuffTime\obj\Debug\netcoreapp2.1\RuffTime.pdb
 C:\Users\Sammi\Desktop\RuffTime\RuffTime\obj\Debug\netcoreapp2.1\RuffTime.csproj.CopyComplete
+C:\Users\Sammi\Desktop\RuffTime\RuffTime\obj\Debug\netcoreapp2.1\Razor\Views\Home\Weather.cshtml.g.cs
