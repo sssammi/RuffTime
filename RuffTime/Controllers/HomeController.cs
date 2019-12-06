@@ -34,19 +34,6 @@ namespace RuffTime.Controllers
             }
             return null;
         }
-        private async Task<List<GifResult>> GetGif()
-        {
-            var client = _httpClientFactory.CreateClient("tenorapi");
-
-            var result = await client.GetAsync("/search?q=cutepuppy&key=XT36E03J2HH2");
-
-            if (result.IsSuccessStatusCode)
-            {
-                var content = await result.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<List<GifResult>>(content);
-            }
-            return null;
-        }
         private async Task<WeatherForecast> GetWeatherForecast()
         {
             var client = _httpClientFactory.CreateClient("metaweather");
