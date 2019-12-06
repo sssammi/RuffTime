@@ -21,7 +21,7 @@ namespace RuffTime.Controllers
             _logger = logger;
             _httpClientFactory = httpClientFactory;
         }
-        private async Task<Dog> GetDog()
+        private async Task<List<Dog>> GetDog()
         {
             var client = _httpClientFactory.CreateClient("thedogapi");
 
@@ -30,7 +30,7 @@ namespace RuffTime.Controllers
             if (result.IsSuccessStatusCode)
             {
                 var content = await result.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<Dog>(content);
+                return JsonConvert.DeserializeObject<List<Dog>>(content);
             }
             return null;
         }
@@ -40,22 +40,13 @@ namespace RuffTime.Controllers
             var model = await GetDog();
             return View(model);
         }
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-
         public IActionResult About()
         {
-            //ViewData["Message"] = "About Us";
-
             return View();
         }
 
         public IActionResult Contact()
         {
-            //ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 
